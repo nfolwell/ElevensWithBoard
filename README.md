@@ -1,5 +1,5 @@
 # Introduction:
-In this activity, the game Elevens will be explained, and you will play an interactive version of the game. 
+Below is an example of the Elevens game play.  The code in this repository can get you started.  I'll have a video of what I did to get it working a little later.  You have to do some work on the ElevensBoard class.  
 # Exploration:
 The solitaire game of Elevens uses a deck of 52 cards, with ranks A (ace), 2, 3, 4, 5, 6, 7, 8, 9, 10, J (jack), 
 Q (queen), and K (king), and suits ♣ (clubs), ♦ (diamonds), ♥ (hearts), and ♠ (spades). Here is how it 
@@ -38,10 +38,6 @@ A♣ 10♦ K♦ 7♦ 3♣ 7♣ 3♥ 5♠ 5♦ remove 2♠ and 9♠
 2♦ K♣ K♦ 7♦ 3♣ 7♣ 3♥ 5♠ Q♦ remove 6♦ and one of the 5s; no further plays are 
 possible; game is lost.
 
-An interactive GUI version of Elevens allows one to play by clicking card images and buttons rather than 
-by handling actual cards. When Elevens.jar is run, the cards on the board are displayed in a window. 
-Clicking on an unselected card selects it; clicking on a selected card unselects it. Clicking on the Replace
-button first checks that the selection is legal; if so, it does the removal and deals cards to fill the empty 
-slots. Clicking on the Restart button restarts the game.
+
 
 

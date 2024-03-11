@@ -10,21 +10,21 @@ public class ElevensBoardTester
       ElevensBoard b = new ElevensBoard();
       //We'll print b each step.  (It prints the 9 card array of cards on the board)
       
-      System.out.println("After Constructing: \n"+b);
+      System.out.println("1. After Constructing: \n"+b);
       //2. Next method I see is newGame()
       b.newGame();
-      System.out.println("After newGame()\n"+b);
+      System.out.println("2. After newGame()\n"+b);
       //3. Now I see size()... which is 9 the whole time?
-      System.out.println("size() = "+b.size());
+      System.out.println("3. size() = "+b.size());
       //4. Now I see isEmpty() which will be false if we constructed an ElevensBoard
-      System.out.println("isEmpty() = "+b.isEmpty());
+      System.out.println("4. isEmpty() = "+b.isEmpty());
       //5. Next I see deal(k)
       b.deal(3);
       b.deal(7);
-      System.out.println("You should see index 3 and 7 cards overwriten by another card");
+      System.out.println("4. You should see index 3 and 7 cards overwriten by another card");
       System.out.println(b);
       //6. Now I see deckSize()
-      System.out.println("deckSize() = "+b.deckSize());
+      System.out.println("5. deckSize() = "+b.deckSize());
       b.deal(4);
       System.out.println("(should be 1 less) deckSize() = "+b.deckSize());
       //7. cardAt(int j) returns the jth card in the card array

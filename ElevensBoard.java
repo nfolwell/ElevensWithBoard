@@ -15,7 +15,7 @@ public class ElevensBoard {
 	 * The ranks of the cards for this game to be sent to the deck.
 	 */
 	private static final String[] RANKS =
-		{"ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+		{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
 	/**
 	 * The suits of the cards for this game to be sent to the deck.
@@ -43,7 +43,7 @@ public class ElevensBoard {
 	/**
 	 * Flag used to control debugging print statements.
 	 */
-	private static final boolean I_AM_DEBUGGING = true;
+	private static final boolean I_AM_DEBUGGING = false;
 
 
 	/**
@@ -56,6 +56,7 @@ public class ElevensBoard {
 			System.out.println(deck);
 			System.out.println("----------");
 		}
+		deck.shuffle();
 		dealMyCards();
 	}
 
@@ -138,7 +139,7 @@ public class ElevensBoard {
 		List<Integer> selected = new ArrayList<Integer>();
 		for (int k = 0; k < cards.length; k++) {
 			if (cards[k] != null) {
-				selected.add(new Integer(k));
+				selected.add(k);
 			}
 		}
 		return selected;
@@ -149,10 +150,14 @@ public class ElevensBoard {
 	 * @return the string version of this board.
 	 */
 	public String toString() {
-		String s = "";
-		for (int k = 0; k < cards.length; k++) {
-			s = s + k + ": " + cards[k] + "\n";
-		}
+		String s = " ";
+		for (int i = 0; i < cards.length; i++)
+			s += (i+1)+"   ";
+	    s+="\n";
+		for (int k = 0; k < cards.length; k++) 
+			s = s +  cards[k] + " ";
+		s+="\n";
+		
 		return s;
 	}
 
@@ -184,6 +189,7 @@ public class ElevensBoard {
 	 *         false otherwise.
 	 */
 	public boolean isLegal(List<Integer> selectedCards) {
+		System.out.println("in isLegal:"+selectedCards);
 		if (selectedCards.size() == 2) {
 			return containsPairSum11(selectedCards);
 		} else if (selectedCards.size() == 3) {

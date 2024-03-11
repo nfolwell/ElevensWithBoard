@@ -87,6 +87,6 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		return rank + " " + suit /*+ " ("+ pointValue + ")"*/;
+		return  rank + ((rank.equals("10"))?"":"-") +  suit /*+ " ("+ pointValue + ")"*/;
 	}
 }

@@ -15,8 +15,8 @@ public class ElevensBoard {
 	 * The ranks of the cards for this game to be sent to the deck.
 	 */
 	private static final String[] RANKS =
-		{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-
+/*{ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10" ,"J", "Q", "K"};*/
+{"A","10"};
 	/**
 	 * The suits of the cards for this game to be sent to the deck.
 	 */
@@ -27,8 +27,8 @@ public class ElevensBoard {
 	 * The values of the cards for this game to be sent to the deck.
 	 */
 	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
-
+/*{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};*/
+ {1, 10};
 
 	/**
 	 * The cards on this board.
@@ -189,7 +189,6 @@ public class ElevensBoard {
 	 *         false otherwise.
 	 */
 	public boolean isLegal(List<Integer> selectedCards) {
-		System.out.println("in isLegal:"+selectedCards);
 		if (selectedCards.size() == 2) {
 			return containsPairSum11(selectedCards);
 		} else if (selectedCards.size() == 3) {
@@ -258,11 +257,11 @@ public class ElevensBoard {
 		boolean foundKing = false;
 		for (Integer kObj : selectedCards) {
 			int k = kObj.intValue();
-			if (cardAt(k).rank().equals("jack")) {
+			if (cardAt(k).rank().equals("J")) {
 				foundJack = true;
-			} else if (cardAt(k).rank().equals("queen")) {
+			} else if (cardAt(k).rank().equals("Q")) {
 				foundQueen = true;
-			} else if (cardAt(k).rank().equals("king")) {
+			} else if (cardAt(k).rank().equals("K")) {
 				foundKing = true;
 			}
 		}
